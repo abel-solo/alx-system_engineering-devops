@@ -1,0 +1,2 @@
+#!/bin/bash
+echk $((2#$BINARY))
