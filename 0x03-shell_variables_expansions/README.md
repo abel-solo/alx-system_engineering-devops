@@ -8,4 +8,6 @@
 
 #3,Create a script that counts the number of directories in the PAT
 
-#4,Create a script that lists environment variables
+#4,Create a script that lists environment variable
+
+#5,Create a script that lists all local variables and environment variables, and functions
