@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # configures an Ubuntu server to: localhost resolves to 127.0.0.2, facebook.com resolves to 8.8.8.8
 
-cp /etc/hosts hosts_tmp
-sed -i s/127.*$/127.0.0.2\\tlocalhost\\n8.8.8.8\\tfacebook.com/g hosts_tmp
-cp -f hosts_tmp /etc/hosts
+sudo sed -i -e 's/127.0.0.1 localhost/127.0.0.2 localhost/g' /etc/hosts
+echo -e "8.8.8.8\tfacebook.com" >> //etc/hosts
