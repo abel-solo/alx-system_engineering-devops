@@ -2,4 +2,12 @@
 ---
 [Simple web stack](#0-simple_web_stack)
 ---
-![image](
+![image](https://imgur.com/aXyJiNP)
+---
+[Distrbuted Web Infrastructure](#1-distributed_web_infrastructure)
+---
+![image](https://imgur.com/3s6JNdG)
+---
+[secured and monitored web infrastructure](#2-secured_and_monitored_web_infrastructure)
+---
+![image](https://imgur.com/sKa3SKX)
