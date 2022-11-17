@@ -2,7 +2,7 @@
 ---
 [Simple web stack](#0-simple_web_stack)
 ---
-![image](https://imgur.com/aXyJiNP)
+![image](https://i.imgur.com/aXyJiNP.jpg?1)
 ---
 [Distrbuted Web Infrastructure](#1-distributed_web_infrastructure)
 ---
