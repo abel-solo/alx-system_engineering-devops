@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#fixing error message when we put curl 0:8080
+
+sudo service apache2 start
