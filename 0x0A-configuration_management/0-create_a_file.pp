@@ -1,5 +1,4 @@
 # creating a file using puppet unsing below specification
-
 file { '/tmp/school':
   path    => '/tmp/scchool',
   mode    => '0744',
