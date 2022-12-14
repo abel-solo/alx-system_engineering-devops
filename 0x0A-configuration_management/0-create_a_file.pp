@@ -1,6 +1,7 @@
 # creating a file using puppet unsing below specification
+
 file { '/tmp/school':
-  path    => '/tmp/scchool',
+  path    => '/tmp/school',
   mode    => '0744',
   owner   => 'www-data',
   group   => 'www-data',
