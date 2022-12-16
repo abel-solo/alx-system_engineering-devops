@@ -22,7 +22,7 @@ exec { 'allow HTTP':
   onlyif  => '! dpkg -l nginx | egrep \'îi.*nginx\' > /dev/null 2>&1',
 }
 
-# change folder rights
+# change folder right
 exec { 'chmod www folder':
   command => 'chmod -R 755 /var/www',
   path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
@@ -65,13 +65,13 @@ file { 'Nginx default config file':
 }
 ",
 }
-# restart nginx
+# restarting nginx
 exec { 'restart service':
   command => 'service nginx restart',
   path    => '/usr/bin:/usr/sbin:/bin',
 }
 
-# start service nginx
+# starting service nginx
 service { 'nginx':
   ensure  => running,
   require => Package['nginx'],
