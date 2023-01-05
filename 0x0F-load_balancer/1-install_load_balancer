@@ -6,4 +6,25 @@ sudo add-apt-repository -y ppa:vbernat/haproxy-2.4
 sudo apt install haproxy=2.4.\*
 sudo apt-get -y update && sudo apt upgrade
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+sed -i -e '$aENABLED=1\n' /etc/default/haproxy
+sed -i -e '$a\listen balancer\n\tbind :80\n\tbalance roundrobin\n\tserver 65577-web-01 54.237.65.144:80 check\n\tserver 65577-web-02 54.88.134.53:80 check\n' /etc/haproxy/haproxy.cfg
+=======
+lb="\nfrontend www\n
+\tbind :80
+\tmode http
+\tdefault_backend web_servers
+
+backend web_servers
+\tbalance roundrobin
+\tserver 65577-web-01 54.237.65.144:80 check
+\tserver 65577-web-02 54.88.134.53:80 check
+"
+echo -e "ENABLED=1\n" | sudo tee -a /etc/default/haproxy
+echo -e "$lb" | sudo tee -a /etc/haproxy/haproxy.cfg
+>>>>>>> 16af4dfec69f5ac52c13825813dccd771b8b038c
+
+>>>>>>> 791a07a2229122dc00fa8d904aa73f0a5dbf2b42
 sudo service haproxy restart
