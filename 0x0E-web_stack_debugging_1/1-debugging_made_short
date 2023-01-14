@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # making the fix short and sweet for task 0
-
-sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
-sudo service nginx reload
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
 kill "$(pgrep 'nginx' | head -1)"
