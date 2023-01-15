@@ -1,0 +1,10 @@
+# Configure ufw so that it blocks all incoming traffic except: 22, 443, 80
+sudo apt -y update
+sudo apt-get -y install ufw
+sudo ufw default deny -y incoming
+sudo ufw default allow -y outgoing
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw enable
+sudo ufw status verbose
