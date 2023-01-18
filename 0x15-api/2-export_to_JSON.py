@@ -1,18 +1,18 @@
 #!/usr/bin/python3
 '''script to export data in the JSON format'''
 import json
-import requests
+import requests as r
 import sys
 
 if __name__ == '__main__':
-    user_sys = sys.argv[1]
-    url = 'https://jsonplaceholder.typicode.com'
-    usr = requests.get(url + "users/{}".format(user_sys)).json()
+    user_id = sys.argv[1]
+    url = "https://jsonplaceholder.typicode.com/"
+    usr = r.get(url + "users/{}".format(user_id)).json()
     username = usr.get("username")
-    to_do = requests.get(url+'todos',params={'user_id':user_sys}).json()
+    to_do = r.get(url + "todos", params={"user_id": user_id}).json()
 
-    with open("{}.json".format(user_sys), "w") as jsonfile:
-        json.dump({user_sys: [{"task": e.get("title"),
+    with open("{}.json".format(user_id), "w") as jsonfile:
+        json.dump({user_id: [{"task": e.get("title"),
                               "completed": e.get("completed"),
                               "username": username} for e in to_do]},
                   jsonfile)
