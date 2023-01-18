@@ -1,17 +1,16 @@
 #!/usr/bin/python3
 """Script to export data in the CSV format"""
-import csv
-import requests
 import sys
+import requests
+import csv
 
-if __name__ == "__main__":
-    user_id = sys.argv[1]
+
+if __name__ == '__main__':
     url = 'https://jsonplaceholder.typicode.com'
-    usr = requests.get(url + "users/{}".format(user_id)).json()
-    username = usr.get("username")
-    to_do = requests.get(url + "todos", params={"userId": user_id}).json()
+    usr = requests.get(url + '/users/' + argv[1]).json()['username']
+    todos = requests.get(url + '/todos?userId=' + argv[1]).json()
 
-    with open("{}.csv".format(user_id), "w", newline="") as csvfile:
-        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-        [writer.writerow([user_id, username, elm.get("completed"),
-                          elm.get("title")]) for elm in to_do]
+    with open('{}.csv'.format(argv[1]), 'w') as file:
+        writer = csv.writer(file, quoting=csv.QUOTE_ALL)
+        for todo in todos:
+            writer.writerow([argv[1], usr, todo['completed'], todo['title']])
