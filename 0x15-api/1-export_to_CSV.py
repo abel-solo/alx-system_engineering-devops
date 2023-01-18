@@ -6,10 +6,11 @@ import sys
 
 
 if __name__ == '__main__':
+    usr_sys = sys.argv[1]
     url = 'https://jsonplaceholder.typicode.com'
-    usr = requests.get(url + '/users/' + sys.argv[1]).json()['username']
-    todos = requests.get(url + '/todos?userId=' + sys.argv[1]).json()
-    with open('{}.csv'.format(sys.argv[1]), 'w') as file:
+    usr = requests.get(url + '/users/' + usr_sys).json()['username']
+    todos = requests.get(url + '/todos?userId=' + usr_sys).json()
+    with open('{}.csv'.format(usr_sys), 'w') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for todo in todos:
-           writer.writerow([sys.argv[1], usr, todo['completed'], todo['title']])
+            writer.writerow([usr_sys, usr, todo['completed'], todo['title']])
